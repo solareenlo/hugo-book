@@ -1,4 +1,9 @@
 # Hugo Book Theme
+Hugoのサンプルテーマである`Hugo Book`を自分好みにカスタマイズしてるリポジトリ.
+
+Original↓
+---
+# Hugo Book Theme
 [![Build Status](https://travis-ci.org/alex-shpak/hugo-book.svg?branch=master)](https://travis-ci.org/alex-shpak/hugo-book)
 ### [Hugo](https://gohugo.io) documentation theme as simple as plain book
 
