@@ -237,20 +237,5 @@ aside nav,
   }
 }
 
-::-webkit-scrollbar{
-  width: 10px;
-  height: 10px;
-  color: $bg-color;
-  // display: none;
-}
-::-webkit-scrollbar-track{
-  background: $content-bg-color;
-}
-::-webkit-scrollbar-thumb{
-  background: $bg-color;
-  border-radius: 10px;
-  // box-shadow: inset 0 0 0 2px #fff;
-}
-
 // Add custom defined styles
 @import 'custom'
