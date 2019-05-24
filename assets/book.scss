@@ -1,6 +1,7 @@
 @import "normalize";
 @import "variables";
 @import "markdown";
+@import "shortcode";
 @import "utils";
 
 html {
@@ -19,7 +20,7 @@ body {
   color: $body-font-color;
   background: $body-background;
 
-  font-family: "Oxygen", sans-serif;
+  font-family: sans-serif;
   font-weight: $body-font-weight;
 
   text-rendering: optimizeLegibility;
@@ -67,7 +68,7 @@ aside nav ul {
   }
 
   a:hover {
-    opacity: .5;
+    opacity: 0.5;
   }
 
   ul {
@@ -109,9 +110,11 @@ ul.pagination {
 
 .book-section-flat {
   margin-bottom: $padding-16 * 2;
+  margin-top: $padding-16 * 2;
 
-  > a, > span {
-    font-weight: 600
+  > a,
+  > span {
+    font-weight: 600;
   }
 
   > ul {
@@ -141,32 +144,20 @@ ul.pagination {
     @include fixed;
   }
 
-  nav > ul > li {
-    margin: 0;
-  }
-}
-
-.book-git-footer {
-  display: flex;
-  margin-top: $padding-16;
-  font-size: $font-size-14;
-  align-items: baseline;
-
-  img {
-    width: $font-size-14;
-    vertical-align: bottom;
+  nav > ul > li:first-child {
+    margin-top: 0;
   }
 }
 
 .book-footer {
   display: flex;
-  margin-top: $padding-16;
+  padding-top: $padding-16;
   font-size: $font-size-14;
   align-items: baseline;
 
   img {
-    width: $font-size-14;
-    vertical-align: bottom;
+    width: 1em;
+    height: 1em;
   }
 }
 
@@ -237,5 +228,12 @@ aside nav,
   }
 }
 
+// Add fonts
+@import "fonts";
+
 // Add custom defined styles
+<<<<<<< HEAD
 @import 'custom'
+=======
+@import "custom";
+>>>>>>> root_branch/master

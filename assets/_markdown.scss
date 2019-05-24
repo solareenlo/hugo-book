@@ -7,6 +7,7 @@ $block-border-radius: 0.15rem;
 
   h1, h2, h3, h4, h5 {
     font-weight: 400;
+<<<<<<< HEAD
     line-height: 1.5;
     margin-top: 2em;
 
@@ -15,6 +16,15 @@ $block-border-radius: 0.15rem;
       margin-top: 0;
       line-height: 1em;
     }
+=======
+    line-height: 1.25;
+  }
+
+  // remove padding at the beginning of page
+  > :first-child {
+    margin-top: 0;
+    line-height: 1;
+>>>>>>> root_branch/master
   }
 
   h2 {
@@ -92,5 +102,11 @@ $block-border-radius: 0.15rem;
     tr:nth-child(n) {
       background: $base03;
     }
+  }
+
+  hr {
+    height: $padding-1;
+    border: none;
+    background: $gray-200;
   }
 }
