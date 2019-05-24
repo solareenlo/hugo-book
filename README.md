@@ -1,5 +1,4 @@
 # Hugo Book Theme
-<<<<<<< HEAD
 Hugoのサンプルテーマである`Hugo Book`を自分好みにカスタマイズしてるリポジトリ.
 
 Original↓
