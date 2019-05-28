@@ -8,7 +8,7 @@ Original↓
 
 >>>>>>> root_branch/master
 [![Build Status](https://travis-ci.org/alex-shpak/hugo-book.svg?branch=master)](https://travis-ci.org/alex-shpak/hugo-book)
-[![Hugo](https://img.shields.io/badge/hugo-0.48-green.svg)](gohugo.io)
+[![Hugo](https://img.shields.io/badge/hugo-0.48-blue.svg)](https://gohugo.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ### [Hugo](https://gohugo.io) documentation theme as simple as plain book
@@ -21,6 +21,10 @@ Original↓
 - [Configuration](#configuration)
 - [Shortcodes](#shortcodes)
 - [Contributing](#contributing)
+
+## Breaking changes
+
+> ⚠️ At the moment theme is under development, breaking changes might happen.
 
 ## Features
 
@@ -130,9 +134,10 @@ enableGitInfo = true
 disableKinds = ['taxonomy', 'taxonomyTerm']
 
 [params]
-# (Optional, default true) Show or hide table of contents globally
+# (Optional, default 6) Set how many table of contents levels to be showed on page.
+# Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
 # You can also specify this parameter per page in front matter
-BookShowToC = true
+BookToC = 3
 
 # (Optional, default none) Set leaf bundle to render as side menu
 # When not specified file structure and weights will be used
@@ -181,8 +186,8 @@ bookFlatSection = true
 # (Optional) Set true to hide page or section from side menu (if BookMenuBundle not set)
 bookHidden = true
 
-# (Optional) Set true to hide table of contents, overrides global value
-bookShowToC = false
+# (Optional) Set how many levels of ToC to show. use 'false' to hide ToC completely
+bookToC = 3
 ```
 
 ### Partials
@@ -242,7 +247,8 @@ Organize text in 2 or more columns to use space efficiently.
 # Mid Content Lorem markdownum insigne... <--->
 <!-- magic sparator, between columns -->
 
-# Right Content Lorem markdownum insigne... {{< /columns >}}
+# Right Content Lorem markdownum insigne...
+{{< /columns >}}
 ```
 
 ### Mermaid Chat

@@ -1,6 +1,6 @@
 @import "variables";
 
-.markdown-inner {
+.markdown-inner { // Util class to remove extra margin in nested markdown content
   > :first-child {
     margin-top: 0;
   }
@@ -66,4 +66,17 @@
   div + div {
     margin-left: $padding-16 * 2;
   }
+}
+
+// {{< button >}}
+a.book-btn {
+  display: inline-block;
+  color: $color-link !important;
+  text-decoration: none !important;
+  border: $padding-1 solid $color-link;
+  border-radius: $padding-4;
+  padding: $padding-4 $padding-16;
+  margin-top: $padding-8;
+  margin-bottom: $padding-8;
+  cursor: pointer;
 }
