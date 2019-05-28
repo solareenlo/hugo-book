@@ -4,9 +4,6 @@ Hugoのサンプルテーマである`Hugo Book`を自分好みにカスタマ�
 Original↓
 ---
 # Hugo Book Theme
-=======
-
->>>>>>> root_branch/master
 [![Build Status](https://travis-ci.org/alex-shpak/hugo-book.svg?branch=master)](https://travis-ci.org/alex-shpak/hugo-book)
 [![Hugo](https://img.shields.io/badge/hugo-0.48-blue.svg)](https://gohugo.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
