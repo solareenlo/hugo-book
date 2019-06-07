@@ -19,10 +19,6 @@ Original↓
 - [Shortcodes](#shortcodes)
 - [Contributing](#contributing)
 
-## Breaking changes
-
-> ⚠️ At the moment theme is under development, breaking changes might happen.
-
 ## Features
 
 - Clean simple design
@@ -236,13 +232,15 @@ Useful if you want to show alternative information per platform or setting.
 Organize text in 2 or more columns to use space efficiently.
 
 ```html
-{{< columns >}}
-<!-- begin columns block -->
-# Left Content Lorem markdownum insigne... <--->
-<!-- magic sparator, between columns -->
+{{< columns >}} <!-- begin columns block -->
 
-# Mid Content Lorem markdownum insigne... <--->
-<!-- magic sparator, between columns -->
+# Left Content Lorem markdownum insigne...
+
+<---> <!-- magic sparator, between columns -->
+
+# Mid Content Lorem markdownum insigne...
+
+<---> <!-- magic sparator, between columns -->
 
 # Right Content Lorem markdownum insigne...
 {{< /columns >}}
