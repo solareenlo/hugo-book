@@ -38,7 +38,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: 400;
+  font-weight: $body-font-weight;
 }
 
 a {
@@ -110,11 +110,14 @@ ul.pagination {
 
 .book-section-flat {
   margin-bottom: $padding-16 * 2;
-  margin-top: $padding-16 * 2;
+
+  &:not(:first-child) {
+    margin-top: $padding-16 * 2;
+  }
 
   > a,
   > span {
-    font-weight: 600;
+    font-weight: bolder;
   }
 
   > ul {
