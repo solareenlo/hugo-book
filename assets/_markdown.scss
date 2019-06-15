@@ -3,17 +3,18 @@
 $block-border-radius: 0.15rem;
 
 .markdown {
-  line-height: 1.7;
+  line-height: 1.6;
 
   h1, h2, h3, h4, h5 {
-    font-weight: $body-font-weight;
-    line-height: 1.25;
+    font-weight: normal;
+    line-height: 1;
+    margin-top: 1.5em;
+    margin-bottom: $padding-16;
   }
 
   // remove padding at the beginning of page
   > :first-child {
     margin-top: 0;
-    line-height: 1;
   }
 
   h2 {
@@ -63,7 +64,7 @@ $block-border-radius: 0.15rem;
     padding: $padding-16;
     background: $gray-100;
     border-radius: $block-border-radius;
-    font-size: $font-size-14;
+    font-size: .875em;
     overflow-x: auto;
 
     code {
@@ -74,7 +75,7 @@ $block-border-radius: 0.15rem;
 
   blockquote {
     border-left: $padding-1*2 solid $gray-300;
-    margin: 0;
+    margin: $padding-16 0;
     padding: $padding-1 $padding-16;
 
     :first-child { margin-top: 0; }
@@ -84,11 +85,21 @@ $block-border-radius: 0.15rem;
   table {
     border-spacing: 0;
     border-collapse: collapse;
+<<<<<<< HEAD
 
     tr th, tr td {
       padding: $padding-8 $padding-16;
       line-height: 1;
       border: 1px solid $text-color;
+=======
+    margin-top: $padding-16;
+    margin-bottom: $padding-16;
+  
+    tr th, tr td {
+      padding: $padding-8 $padding-16;
+      line-height: 1;
+      border: $padding-1 solid $gray-200;
+>>>>>>> upstream/master
     }
 
     tr:nth-child(2n) {
