@@ -1,6 +1,8 @@
-# Expand shortcode
+# Shortcodes
 
-## Default
+## Expand shortcode
+
+### Default
 
 ```tpl
 {{</* expand */>}}
@@ -14,7 +16,7 @@ Lorem markdownum insigne...
 Lorem markdownum insigne...
 {{< /expand >}}
 
-## With Custom Label
+### With Custom Label
 
 ```tpl
 {{</* expand "Custom Label" "..." */>}}
@@ -31,7 +33,7 @@ protulit, sed sed aere valvis inhaesuro Pallas animam: qui _quid_, ignes.
 Miseratus fonte Ditis conubia.
 {{< /expand >}}
 
-# Buttons
+## Buttons
 
 ```tpl
 {{</* button relref="/" [class="..."] */>}}Get Home{{</* /button */>}}
@@ -41,7 +43,7 @@ Miseratus fonte Ditis conubia.
 {{< button relref="/" >}}Get Home{{< /button >}}
 {{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
 
-# Tabs
+## Tabs
 
 ```tpl
 {{</* tabs "uniqueid" */>}}
@@ -88,7 +90,7 @@ Miseratus fonte Ditis conubia.
 {{< /tab >}}
 {{< /tabs >}}
 
-# Columns
+## Columns
 
 ```html
 {{</* columns */>}} <!-- begin columns block -->
@@ -130,7 +132,7 @@ Miseratus fonte Ditis conubia.
 {{< /columns >}}
 
 
-# Mermaid Chart
+## Mermaid Chart
 
 {{< columns >}}
 ```tpl

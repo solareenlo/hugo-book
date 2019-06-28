@@ -1,6 +1,7 @@
-@import 'variables';
+@import "variables";
 
-.markdown-inner { // Util class to remove extra margin in nested markdown content
+.markdown-inner {
+  // Util class to remove extra margin in nested markdown content
   > :first-child {
     margin-top: 0;
   }
@@ -11,9 +12,13 @@
 
 // {{< expand "Label" "icon" >}}
 .book-expand {
-  border: 1px solid $gray-200;
   margin-top: $padding-16;
   margin-bottom: $padding-16;
+
+  border: $padding-1 solid $gray-200;
+  border-radius: $border-radius;
+
+  overflow: hidden;
 
   .book-expand-head {
     background: $gray-100;
@@ -33,7 +38,14 @@
 
 // {{< tabs >}}
 .book-tabs {
-  border: 1px solid $gray-200;
+  margin-top: $padding-16;
+  margin-bottom: $padding-16;
+
+  border: $padding-1 solid $gray-200;
+  border-radius: $border-radius;
+
+  overflow: hidden;
+
   display: flex;
   flex-wrap: wrap;
 
@@ -62,15 +74,14 @@
 
 // {{< columns >}}
 .book-columns {
-  margin-top: $padding-16;
-  margin-bottom: $padding-16;
-}
-.book-columns > {
-  div {
-    max-width: 50%;
-  }
-  div + div {
-    margin-left: $padding-16 * 2;
+  margin-left: -$padding-16;
+  margin-right: -$padding-16;
+
+  > div {
+    margin: $padding-16 0;
+    // max-width: 50%;
+    min-width: $body-min-width * 0.66;
+    padding: 0 $padding-16;
   }
 }
 
@@ -80,7 +91,7 @@ a.book-btn {
   color: $color-link !important;
   text-decoration: none !important;
   border: $padding-1 solid $color-link;
-  border-radius: $padding-4;
+  border-radius: $border-radius;
   padding: $padding-4 $padding-16;
   margin-top: $padding-8;
   margin-bottom: $padding-8;

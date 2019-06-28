@@ -1,7 +1,5 @@
 @import 'variables';
 
-$block-border-radius: 0.15rem;
-
 .markdown {
   line-height: 1.6;
 
@@ -56,15 +54,15 @@ $block-border-radius: 0.15rem;
 
   code {
     padding: 0 $padding-4;
-    background: $base03;
-    border-radius: $block-border-radius;
+    background: $gray-200;
+    border-radius: $border-radius;
+    font-size: .875em;
   }
 
   pre {
     padding: $padding-16;
     background: $gray-100;
-    border-radius: $block-border-radius;
-    font-size: .875em;
+    border-radius: $border-radius;
     overflow-x: auto;
 
     code {
@@ -74,9 +72,11 @@ $block-border-radius: 0.15rem;
   }
 
   blockquote {
-    border-left: $padding-1*2 solid $gray-300;
     margin: $padding-16 0;
-    padding: $padding-1 $padding-16;
+    padding: $padding-4 ($padding-16 - $padding-4); //to keep total left space 16dp
+
+    border-left: $padding-4 solid $gray-200;
+    border-radius: $border-radius;
 
     :first-child { margin-top: 0; }
     :last-child { margin-bottom: 0; }
@@ -106,5 +106,21 @@ $block-border-radius: 0.15rem;
     height: $padding-1;
     border: none;
     background: $gray-200;
+  }
+
+  ul, ol {
+    padding-left: $padding-16 * 2;
+  }
+
+  dl {
+    // padding-left: $padding-16;
+    dt {
+      font-weight: bolder;
+      margin-top: $padding-16;
+    }
+
+    dd {
+      margin-left: $padding-16 * 2;
+    }
   }
 }
