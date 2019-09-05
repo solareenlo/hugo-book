@@ -42,6 +42,19 @@
   text-align: center;
 }
 
+.hidden {
+  display: none;
+}
+
+@mixin spin($duration) {
+  animation: spin $duration ease infinite;
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
 @mixin fixed {
   position: fixed;
   top: 0;

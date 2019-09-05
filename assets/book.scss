@@ -137,6 +137,48 @@ ul.pagination {
   display: none;
 }
 
+.book-search {
+  position: relative;
+  margin: $padding-16 0;
+  border-bottom: 1px solid transparent;
+
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+
+  input {
+    width: 100%;
+    padding: $padding-8;
+
+    border: 0;
+    border-radius: $padding-4;
+
+    background: $gray-100;
+
+    &:required + .book-search-spinner {
+      display: block;
+    }
+  }
+
+  .book-search-spinner {
+    position: absolute;
+    margin: $padding-8;
+    right: 0;
+    top: 0;
+
+    width: $padding-16;
+    height: $padding-16;
+
+    border: $padding-1 solid transparent;
+    border-top-color: $body-font-color;
+    border-radius: 50%;
+
+    @include spin(1s);
+  }
+}
+
 .book-toc {
   flex: 0 0 $toc-width;
   font-size: $font-size-12;
@@ -179,7 +221,7 @@ ul.pagination {
 
 .book-posts {
   min-width: $body-min-width;
-  max-width: $sm-breakpoint;
+  max-width: $body-min-width * 2;
   flex-grow: 1;
   padding: $padding-16;
 
@@ -211,6 +253,7 @@ aside nav,
 @media screen and (max-width: $sm-breakpoint) {
   .book-menu {
     margin-left: -$menu-width;
+    font-size: $font-size-base;
   }
 
   .book-header {
