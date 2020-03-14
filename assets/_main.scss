@@ -2,6 +2,7 @@ html {
   font-size: $font-size-base;
   letter-spacing: 0.33px;
   scroll-behavior: smooth;
+  touch-action: manipulation;
 }
 
 html,
@@ -54,6 +55,7 @@ aside nav ul {
 
   li {
     margin: 1em 0;
+    position: relative;
   }
 
   a {
@@ -69,16 +71,6 @@ aside nav ul {
   }
 }
 
-// Classes to hide nested levels of ToC/Menu
-.levels-1 ul ul,
-.levels-2 ul ul ul,
-.levels-3 ul ul ul ul,
-.levels-4 ul ul ul ul ul,
-.levels-5 ul ul ul ul ul ul,
-.levels-6 ul ul ul ul ul ul ul {
-  display: none;
-}
-
 ul.pagination {
   display: flex;
   justify-content: center;
@@ -92,6 +84,10 @@ ul.pagination {
 .container {
   max-width: $container-max-width;
   margin: 0 auto;
+}
+
+.book-icon {
+  filter: $icon-filter;
 }
 
 .book-brand {
@@ -118,10 +114,17 @@ ul.pagination {
 
   a {
     color: inherit;
+    word-wrap: break-word;
   }
 
   a.active {
     color: $color-link;
+  }
+
+  a.collapsed::after {
+    content: "▸";
+    position: absolute;
+    right: 0;
   }
 }
 
@@ -148,9 +151,17 @@ ul.pagination {
   padding: $padding-16;
 }
 
+.book-post {
+  margin-bottom: $padding-16 * 3;
+}
+
 .book-header {
-  margin-bottom: $padding-16;
   display: none;
+  margin-bottom: $padding-16;
+
+  label {
+    line-height: 0;
+  }
 }
 
 .book-search {
@@ -169,7 +180,7 @@ ul.pagination {
     padding: $padding-8;
 
     border: 0;
-    border-radius: $padding-4;
+    border-radius: $border-radius;
 
     background: $gray-100;
     color: $body-font-color;
@@ -217,7 +228,6 @@ ul.pagination {
 }
 
 .book-footer {
-  display: flex;
   padding-top: $padding-16;
   font-size: $font-size-14;
 
@@ -227,6 +237,9 @@ ul.pagination {
   }
 }
 
+.book-comments {
+  margin-top: $padding-16;
+}
 
 .book-languages {
   position: relative;
@@ -235,54 +248,49 @@ ul.pagination {
   padding: $padding-16;
   margin: -$padding-16;
 
-  &:hover .book-languages-list {
-    display: block;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      white-space: nowrap;
+      cursor: pointer;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    .book-languages-list {
+      display: block;
+    }
   }
 
   .book-languages-list {
     display: none;
 
     position: absolute;
-    bottom: 0;
+    bottom: 100%;
     left: 0;
     padding: $padding-8 0;
 
     background: $body-background;
     box-shadow: 0 0 $padding-4 rgba(0, 0, 0, 0.1);
 
-    li {
-      padding: $padding-8 $padding-16;
-      white-space: nowrap;
+    li img {
+      opacity: 0.25;
     }
 
-    img {
-      opacity: .1;
-    }
-
-    li.active img {
+    li.active img,
+    li:hover img {
       opacity: 1;
     }
 
     a {
       color: inherit;
+      padding: $padding-8 $padding-16;
     }
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-}
-
-.book-posts {
-  min-width: $body-min-width;
-  max-width: $body-min-width * 2;
-  flex-grow: 1;
-  padding: $padding-16;
-
-  article {
-    padding-bottom: $padding-16;
   }
 }
 
@@ -293,50 +301,56 @@ ul.pagination {
 // Responsive styles
 aside nav,
 .book-page,
-.book-posts,
+.book-header aside,
 .markdown {
   transition: 0.2s ease-in-out;
-  transition-property: transform, margin-left, opacity;
-  will-change: transform, margin-left;
+  transition-property: transform, margin, opacity;
+  will-change: transform, margin;
 }
 
-@media screen and (max-width: $md-breakpoint) {
-  .book-toc {
-    display: none;
-  }
-}
-
-@media screen and (max-width: $sm-breakpoint) {
+@media screen and (max-width: $mobile-breakpoint) {
   .book-menu {
     margin-left: -$menu-width;
     font-size: $font-size-base;
   }
 
+  .book-toc {
+    display: none;
+  }
+
   .book-header {
-    display: flex;
+    display: block;
   }
 
   #menu-control:checked + main {
     .book-menu nav,
-    .book-page,
-    .book-posts {
+    .book-page {
       transform: translateX($menu-width);
     }
 
-    .book-header label {
-      transform: rotate(90deg);
-    }
-
+    .book-header aside,
     .markdown {
       opacity: 0.25;
     }
+
+    .book-menu-overlay {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  #toc-control:checked + aside {
+    display: block;
   }
 }
 
 // Extra space for big screens
 @media screen and (min-width: $container-max-width) {
   .book-page,
-  .book-posts,
   .book-menu nav,
   .book-toc nav {
     padding: $padding-16 * 2 $padding-16;
