@@ -1,3 +1,4 @@
+# This should be removed in future, 'jp' is moved to `ja'
 - id: Search
   translation: 検索
 
