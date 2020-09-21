@@ -7,6 +7,7 @@
 ::-webkit-scrollbar{
   width: 10px;
   height: 10px;
+  // color: --gray-100
   color: $bg-color;
   // display: none;
 }
@@ -14,6 +15,7 @@
   background: $content-bg-color;
 }
 ::-webkit-scrollbar-thumb{
+  // background: --gray-100;
   background: $bg-color;
   border-radius: 10px;
   // box-shadow: inset 0 0 0 2px #fff;

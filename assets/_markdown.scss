@@ -104,16 +104,16 @@
 
   code {
     padding: 0 $padding-4;
-    background: $base03;
-    // background: var(--gray-200);
+    // background: $base03;
+    background: var(--gray-200);
     border-radius: $border-radius;
     font-size: 0.875em;
   }
 
   pre {
     padding: $padding-16;
-    background: $base03;
-    // background: var(--gray-100);
+    // background: $base03;
+    background: var(--gray-100);
     border-radius: $border-radius;
     overflow-x: auto;
 
@@ -150,16 +150,17 @@
     tr td {
       padding: $padding-8 $padding-16;
       line-height: 1;
-      border: $padding-1 solid $base01;
-      // border: $padding-1 solid var(--gray-200);
+      // border: $padding-1 solid $base01;
+      border: $padding-1 solid var(--gray-500);
     }
 
     tr:nth-child(2n) {
-      background: $base03;
-      // background: var(--gray-100);
+      // background: $base03;
+      background: var(--gray-100);
     }
     tr:nth-child(n) {
-      background: $base03;
+      // background: $base03;
+      background: var(--gray-100);
     }
   }
 
